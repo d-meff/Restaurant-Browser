@@ -21,6 +21,10 @@ def get_tacobell():
     your_town = str(your_location).split()[4][1:-1]
     condensed_town = ""
 
+    if len(your_state) != 2:
+        your_state = str(your_location).split()[6][0:-1]
+        your_town = (str(your_location).split()[4] + ' ' + str(your_location).split()[5])[1:-1]
+
     condensed_town = your_town.replace(' ', '-')
 
     for i in states_abr:
